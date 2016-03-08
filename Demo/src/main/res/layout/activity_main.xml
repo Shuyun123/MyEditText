@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:anumbrella="http://schemas.android.com/apk/res-auto"
+    xmlns:floatlabel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DBDBDB"
+    android:orientation="vertical">
+
+
+    <com.iangclifton.android.floatlabel.FloatLabel
+        android:id="@+id/float_label_custom_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="20dip"
+        android:hint="邮箱"
+        android:layout="@layout/content_main" />
+
+    <net.anumbrella.customedittext.MyEditText
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/bg_edittext"
+        android:drawableRight="@mipmap/ic_edittext_delete"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="3dip"
+        android:singleLine="true" />
+
+
+    <net.anumbrella.customedittext.MyEditText
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/bg_edittext"
+        android:drawableRight="@mipmap/ic_edittext_delete"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="3dip"
+        android:singleLine="true"
+        anumbrella:displayDelete="true"
+        anumbrella:selectUnderlineHeight="8dip"
+        anumbrella:selectedColor="#FFFF00" />
+
+
+    <net.anumbrella.customedittext.MyEditText
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="20dip"
+        android:drawableLeft="@mipmap/user_login"
+        android:drawableRight="@mipmap/ic_edittext_delete"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="3dip"
+        android:singleLine="true"
+        anumbrella:displayDelete="true"
+        anumbrella:unselectedColor="#000000" />
+
+    <com.iangclifton.android.floatlabel.FloatLabel
+        android:id="@+id/float_label_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:hint="自定义floatlabel的颜色"
+        android:textColorHint="@drawable/custom_hint_color"
+        floatlabel:floatLabelColor="#FF0000" />
+
+
+</LinearLayout>

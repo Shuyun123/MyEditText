@@ -1,19 +1,20 @@
 package net.anumbrella.customedittext;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 /**
  * Created by anumbrella on 16/3/8.
@@ -25,7 +26,8 @@ public class MyEditText extends EditText {
     /**
      * 右边的视图
      */
-    private Drawable mRightDrawable;
+
+    private final Drawable mRightDrawable = this.getCompoundDrawables()[2];
 
     /**
      * 下滑线绘制画笔
@@ -57,13 +59,16 @@ public class MyEditText extends EditText {
     private int errorColor;
 
 
+    /**
+     * 下划线的高度
+     */
     private float underlineHeight;
 
 
     /**
      * 是否显示EditText中带删除的图标
      */
-    private boolean displayEditTextDelete = true;
+    private boolean displayEditTextDelete = false;
 
 
     /**
@@ -138,11 +143,6 @@ public class MyEditText extends EditText {
 
         array.recycle();
 
-        setUnderlineHeight(unSelectUnderlineHeight);
-        underlinePaint = new Paint();
-        setUnderlinePaintColor(unSelectColor);
-        underlinePaint.setStyle(Paint.Style.STROKE);
-        underlinePaint.setStrokeWidth(underlineHeight);
         init();
 
     }
@@ -150,28 +150,33 @@ public class MyEditText extends EditText {
 
     private void init() {
 
+        initPaint();
+
+        this.setFocusable(true);
+        this.setFocusableInTouchMode(true);
 
         /**
          * 在xml中定义的图片资源
          *
          * 该方法返回包含控件左,上,右,下四个位置的Drawable的数组
          * */
-        Drawable[] drawables = this.getCompoundDrawables();
-
-        mRightDrawable = drawables[2];
 
         // 为EditText编辑框添加焦点变化监听(当前对象为编辑框)
-        //防止有些手机无法获取焦点
-
-        this.setFocusable(true);
-        this.setFocusableInTouchMode(true);
-
         this.setOnFocusChangeListener(new FocusChangeListener());
         // 为EditText编辑框添加输入文字变化监听
         this.addTextChangedListener(new TextChangeListener());
 
         // 设置清除按钮图标是否可见
-        setDrawableVisible(displayEditTextDelete);
+        setDrawableVisible(false);
+
+    }
+
+    private void initPaint() {
+
+        underlinePaint = new Paint();
+        setUnderlinePaintColor(unSelectColor);
+        underlinePaint.setStyle(Paint.Style.STROKE);
+        setUnderlineHeight(unSelectUnderlineHeight);
 
     }
 
@@ -214,6 +219,11 @@ public class MyEditText extends EditText {
     }
 
 
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
     /**
      * 设置清除按钮的图标是否可见
      *
@@ -221,7 +231,7 @@ public class MyEditText extends EditText {
      */
     private void setDrawableVisible(boolean isVisibleClean) {
         Drawable rightDrawable;
-        if (isVisibleClean) {
+        if (isVisibleClean && displayEditTextDelete) {
             rightDrawable = mRightDrawable;
         } else {
             rightDrawable = null;
@@ -242,6 +252,7 @@ public class MyEditText extends EditText {
      *
      * @param canvas
      */
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onDraw(Canvas canvas) {
 
@@ -258,6 +269,7 @@ public class MyEditText extends EditText {
      */
     public void setUnderlineHeight(float height) {
         this.underlineHeight = height;
+        underlinePaint.setStrokeWidth(underlineHeight);
     }
 
 
@@ -277,14 +289,14 @@ public class MyEditText extends EditText {
     private class FocusChangeListener implements OnFocusChangeListener {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
-
             isHasFocus = hasFocus;
             if (isHasFocus) {
                 // 如果编辑框有输入文字,就显示删除的图片按钮
-                boolean isVisibleClean = getText().toString().length() >= 1;
-                setDrawableVisible(isVisibleClean);
+                boolean isVisible = getText().toString().length() >= 1;
+                setDrawableVisible(isVisible);
                 setUnderlinePaintColor(selectColor);
                 setUnderlineHeight(selectUnderlineHeight);
+
                 invalidate();
 
             } else {
@@ -303,9 +315,6 @@ public class MyEditText extends EditText {
     private class TextChangeListener implements TextWatcher {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            setUnderlinePaintColor(selectColor);
-            setUnderlineHeight(selectUnderlineHeight);
-            invalidate();
 
         }
 

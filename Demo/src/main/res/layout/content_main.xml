@@ -15,6 +15,7 @@
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="50dip"
+        android:paddingLeft="2dip"
         android:gravity="center_vertical"
         anumbrella:displayDelete="false"
         android:background="@drawable/bg_edittext"

@@ -3,7 +3,7 @@
     <!-- 当前EditText选中的默认颜色-->
     <color name="defaultSelectedColor">#63B8FF</color>
     <!--当前EditText没有选中的默认颜色-->
-    <color name="defaultUnselectedColor">#dcdedd</color>
+    <color name="defaultUnselectedColor">#CD0000</color>
     <!-- 当前EditText选择错误时的默认颜色-->
     <color name="defaultErrorColor">#CD0000</color>
 
