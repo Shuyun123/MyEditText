@@ -3,7 +3,7 @@
     xmlns:anumbrella="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@id/float_label"
+        android:id="@+id/float_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
