@@ -1,5 +1,5 @@
 #MyEditText
-- - - -
+
 自定义的EditText组件
 
 支持自定义下滑线，下滑线可更改颜色、高度，带FloatLabel的浮动显示，与开发者头条app注册填写一样的效果，支持自定义EditText带删除图标和标识图标。
@@ -8,15 +8,13 @@ FloatLablel的功能来自 [IanGClifton](https://github.com/IanGClifton/AndroidF
 
 
 ##依赖库
-***
+
  ```bash
 compile 'com.iangclifton.android:floatlabel:1.0.4'
 ```
 
 ##示例
 ![MyEditText](MyEditText.gif)
-
-
 
 ##MyEditText的使用
 在xml布局文件里添加如下布局文件:<br/>
@@ -65,7 +63,6 @@ compile 'com.iangclifton.android:floatlabel:1.0.4'
 
 而AndroidFloatLabel可以使用自己定义的EditText,也可以使用默认的，直接在xml中定义:
 
-
 <br/>
  ```bash
     <com.iangclifton.android.floatlabel.FloatLabel
@@ -108,11 +105,8 @@ compile 'com.iangclifton.android:floatlabel:1.0.4'
 </merge>
 
 注意id必须为@+id/float_label和@+id/edit_text。
-
 <br/>
-
 具体的用法请看Demo
-
 
 ##License:
 
