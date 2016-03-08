@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="selectUnderlineHeight">2dip</dimen>
+    <dimen name="unSelectUnderlineHeight">2dip</dimen>
+    <dimen name="errorUnderlineHeight">2dip</dimen>
+</resources>

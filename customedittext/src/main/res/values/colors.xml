@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 当前EditText选中的默认颜色-->
+    <color name="defaultSelectedColor">#63B8FF</color>
+    <!--当前EditText没有选中的默认颜色-->
+    <color name="defaultUnselectedColor">#dcdedd</color>
+    <!-- 当前EditText选择错误时的默认颜色-->
+    <color name="defaultErrorColor">#CD0000</color>
+
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MyEditText">
+        <attr name="MyEditTextStyle" format="reference" />
+    </declare-styleable>
+
+
+    <!--在xml中定义EditText以定义的属性-->
+    <declare-styleable name="MyEditTextStyle">
+
+        <!--设置没有选择时的颜色-->
+        <attr name="unselectedColor" format="color" />
+        <!--设置选择时的颜色-->
+        <attr name="selectedColor" format="color" />
+        <!--设置出错时的颜色-->
+        <attr name="errorColor" format="color" />
+        <!-- 设置是否显示EditText中的删除图标-->
+        <attr name="displayDelete" format="boolean" />
+
+        <!-- 设置选中时下划线的高度-->
+        <attr name="selectUnderlineHeight" format="dimension" />
+        <!-- 设置没有选中时下滑线的高度-->
+        <attr name="unSelectUnderlineHeight" format="dimension" />
+        <!-- 设置错误时下滑线的高度-->
+        <attr name="errorUnderlineHeight" format="dimension" />
+
+    </declare-styleable>
+</resources>
