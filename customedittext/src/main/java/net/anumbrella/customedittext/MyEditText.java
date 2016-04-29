@@ -6,7 +6,6 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.Editable;
@@ -27,7 +26,7 @@ public class MyEditText extends EditText {
      * 右边的视图
      */
 
-    private final Drawable mRightDrawable = this.getCompoundDrawables()[2];
+    private final Drawable mRightDrawable = getCompoundDrawables()[2];
 
     /**
      * 下滑线绘制画笔
@@ -155,6 +154,7 @@ public class MyEditText extends EditText {
         this.setFocusable(true);
         this.setFocusableInTouchMode(true);
 
+
         /**
          * 在xml中定义的图片资源
          *
@@ -208,7 +208,6 @@ public class MyEditText extends EditText {
                         && (event.getX() < (getWidth() - getPaddingRight()))) {
                     setText("");
                 }
-
                 break;
 
             default:
@@ -229,10 +228,17 @@ public class MyEditText extends EditText {
      *
      * @param isVisibleClean
      */
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void setDrawableVisible(boolean isVisibleClean) {
         Drawable rightDrawable;
         if (isVisibleClean && displayEditTextDelete) {
-            rightDrawable = mRightDrawable;
+            if (mRightDrawable == null) {
+                rightDrawable = getResources().getDrawable(R.drawable.ic_edittext_delete);
+                rightDrawable.setBounds(0, 0, 75, 75);
+            } else {
+                rightDrawable = mRightDrawable;
+            }
+
         } else {
             rightDrawable = null;
         }

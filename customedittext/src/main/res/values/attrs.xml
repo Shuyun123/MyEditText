@@ -6,6 +6,11 @@
     </declare-styleable>
 
 
+    <declare-styleable name="FloatLabelView">
+        <attr name="FloatLabelViewStyle" format="reference" />
+    </declare-styleable>
+
+
     <!--在xml中定义EditText以定义的属性-->
     <declare-styleable name="MyEditTextStyle">
 
@@ -24,6 +29,46 @@
         <attr name="unSelectUnderlineHeight" format="dimension" />
         <!-- 设置错误时下滑线的高度-->
         <attr name="errorUnderlineHeight" format="dimension" />
+
+    </declare-styleable>
+
+
+    <!--在xml中定义FloatLabelView以定义的属性-->
+    <declare-styleable name="FloatLabelViewStyle">
+        <!--默认提示字体-->
+        <attr name="android:hint" />
+        <!--输入类型-->
+        <attr name="android:inputType" />
+        <!--布局视图资源-->
+        <attr name="android:layout" />
+        <!--各个方向获取焦点-->
+        <attr name="android:nextFocusDown" />
+        <attr name="android:nextFocusForward" />
+        <attr name="android:nextFocusLeft" />
+        <attr name="android:nextFocusRight" />
+        <attr name="android:nextFocusUp" />
+        <!--手机输入法软键盘回车的功能设置-->
+        <attr name="android:imeOptions" />
+        <!--EditText的文本-->
+        <attr name="android:text" />
+        <!--EditText提示字体的颜色-->
+        <attr name="android:textColorHint" />
+        <!--浮动字体的颜色-->
+        <attr name="floatLabelColor" format="color" />
+        <!--自定义TextView的id-->
+        <attr name="labelId" format="reference" />
+        <!--自定义EditText的id-->
+        <attr name="editTextId" format="reference" />
+        <!--FloatLabel显示的方式-->
+        <attr name="floatLabelDisplay" format="dimension" />
+        <!--FloatLable与左边的margin距离-->
+        <attr name="leftDistance" format="dimension" />
+        <!--FloatLable与EditText距离-->
+        <attr name="bottomDistance" format="dimension" />
+        <!--FloatLable字体的大小-->
+        <attr name="labelTextSize" format="dimension" />
+        <!--EidtText字体的大小-->
+        <attr name="editTextSize" format="dimension" />
 
     </declare-styleable>
 </resources>

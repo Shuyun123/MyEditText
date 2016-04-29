@@ -14,12 +14,9 @@
     <net.anumbrella.customedittext.MyEditText
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:paddingLeft="2dip"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        anumbrella:displayDelete="false"
-        android:background="@drawable/bg_edittext"
-        android:drawableRight="@mipmap/ic_edittext_delete"
-        android:singleLine="true" />
+        android:singleLine="true"
+        anumbrella:displayDelete="true" />
 
 </merge>

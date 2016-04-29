@@ -1,77 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:anumbrella="http://schemas.android.com/apk/res-auto"
-    xmlns:floatlabel="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DBDBDB"
+    android:background="#dde1e3"
     android:orientation="vertical">
 
 
-    <com.iangclifton.android.floatlabel.FloatLabel
-        android:id="@+id/float_label_custom_layout_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip"
-        android:layout_marginTop="20dip"
-        android:hint="邮箱"
-        android:layout="@layout/content_main" />
-
-    <net.anumbrella.customedittext.MyEditText
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip"
-        android:layout_marginTop="20dip"
-        android:background="@drawable/bg_edittext"
-        android:drawableRight="@mipmap/ic_edittext_delete"
-        android:focusable="true"
-        android:gravity="center_vertical"
-        android:paddingLeft="3dip"
-        android:singleLine="true" />
-
-
-    <net.anumbrella.customedittext.MyEditText
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip"
-        android:layout_marginTop="20dip"
-        android:background="@drawable/bg_edittext"
-        android:drawableRight="@mipmap/ic_edittext_delete"
-        android:focusable="true"
-        android:gravity="center_vertical"
-        android:paddingLeft="3dip"
-        android:singleLine="true"
-        anumbrella:displayDelete="true"
-        anumbrella:selectUnderlineHeight="8dip"
-        anumbrella:selectedColor="#FFFF00" />
-
-
-    <net.anumbrella.customedittext.MyEditText
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip"
-        android:layout_marginTop="20dip"
-        android:drawableLeft="@mipmap/user_login"
-        android:drawableRight="@mipmap/ic_edittext_delete"
-        android:focusable="true"
-        android:gravity="center_vertical"
-        android:paddingLeft="3dip"
-        android:singleLine="true"
-        anumbrella:displayDelete="true"
-        anumbrella:unselectedColor="#000000" />
-
-    <com.iangclifton.android.floatlabel.FloatLabel
-        android:id="@+id/float_label_4"
+    <net.anumbrella.customedittext.FloatLabelView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dip"
-        android:hint="自定义floatlabel的颜色"
+        android:hint="anumbrella"
         android:textColorHint="@drawable/custom_hint_color"
-        floatlabel:floatLabelColor="#FF0000" />
+        anumbrella:floatLabelColor="#FF0000"
+        anumbrella:bottomDistance="15dip"
+        anumbrella:leftDistance="50dip" />
+
+    <net.anumbrella.customedittext.FloatLabelView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ddd"
+        anumbrella:editTextSize="5sp"
+        anumbrella:labelTextSize="5sp" />
+
+    <net.anumbrella.customedittext.FloatLabelView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:layout="@layout/content_main"
+        android:padding="2dip"
+        anumbrella:editTextSize="15sp"
+        anumbrella:labelTextSize="10sp"
+        anumbrella:leftDistance="5dip" />
+
+    <net.anumbrella.customedittext.MyEditText
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:gravity="fill_vertical"
+        android:singleLine="true"
+        android:textSize="25sp"
+        anumbrella:displayDelete="true" />
+
+    <net.anumbrella.customedittext.MyEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:drawableLeft="@mipmap/user_login"
+        android:gravity="center_vertical"
+        android:hint="anumbrella"
+        android:padding="5dip"
+        android:textSize="25sp"
+        anumbrella:selectUnderlineHeight="4dip"
+        anumbrella:selectedColor="#57FFEA"
+        anumbrella:unSelectUnderlineHeight="1dip"
+        anumbrella:unselectedColor="#F662FF" />
 
 
 </LinearLayout>
