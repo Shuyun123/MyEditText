@@ -26,14 +26,15 @@ dependencies {
 }
 
 ext {
+
     bintrayRepo = 'maven'  ////bintray上的仓库名，一般为maven
-    bintrayName = 'EditText'//bintray上的项目名
+    bintrayName = 'MyEditText'//bintray上的项目名
 
     publishedGroupId = 'net.anumbrella'//JCenter的GroupId
-    artifact = 'utils'//JCenter的ArtifactId
+    artifact = 'customedittext'//JCenter的ArtifactId
 
-    siteUrl = 'https://github.com/Anumbrella/tools'  //项目的主页
-    gitUrl = 'https://github.com/Anumbrella/tools.git'   //Git仓库的url
+    siteUrl = 'https://github.com/Shuyun123/MyEditText'  //项目的主页
+    gitUrl = 'https://github.com/Shuyun123/MyEditText.git'   //Git仓库的url
 
     libraryVersion = '1.0.0'//版本号
     libraryName = 'EditText'//项目名字，没什么用
@@ -50,9 +51,12 @@ ext {
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
 }
+
+
+
+
 apply from:'https://raw.githubusercontent.com/Anumbrella/JCenter/master/install.gradle'
 apply from:'https://raw.githubusercontent.com/Anumbrella/JCenter/master/bintray.gradle'
-
 
 
 

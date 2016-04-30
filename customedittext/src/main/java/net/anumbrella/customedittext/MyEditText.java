@@ -17,7 +17,6 @@ import android.widget.EditText;
 
 /**
  * Created by anumbrella on 16/3/8.
- * <p/>
  * 自定义EditText视图
  */
 public class MyEditText extends EditText {
@@ -183,19 +182,12 @@ public class MyEditText extends EditText {
 
     /**
      * (模拟点击清除图标的操作)
-     * <p/>
      * 当手指抬起的位置在clean的图标的区域 我们将此视为进行清除操作
-     * <p/>
      * getWidth():得到控件的宽度
-     * <p/>
      * event.getX():抬起时的坐标(改坐标是相对于控件本身而言的)
-     * <p/>
      * getTotalPaddingRight():clean的图标左边缘至控件右边缘的距离
-     * <p/>
      * getPaddingRight():clean的图标右边缘至控件右边缘的距离 于是:
-     * <p/>
      * getWidth() - getTotalPaddingRight()表示: 控件左边到clean的图标左边缘的区域
-     * <p/>
      * getWidth() - getPaddingRight()表示: 控件左边到clean的图标右边缘的区域
      * 所以这两者之间的区域刚好是clean的图标的区域
      */

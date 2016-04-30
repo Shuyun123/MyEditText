@@ -21,7 +21,6 @@ import android.widget.TextView;
 /**
  * author：Anumbrella
  * Date：16/4/26 下午3:53
- * <p>
  * 自定义视图的EditText
  */
 public class FloatLabelView extends FrameLayout {
@@ -100,11 +99,15 @@ public class FloatLabelView extends FrameLayout {
     public interface LabelAnimator {
         /**
          * 当视图显示的时候调用
+         *
+         * @param label 显示的label
          */
         public void onDisplayLabel(View label);
 
         /**
          * 当视图隐藏的时候调用
+         *
+         * @param label 隐藏的label
          */
         public void onHideLabel(View label);
 
@@ -177,7 +180,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 获取当前的EditEext资源
      *
-     * @return
+     * @return 返回EditText
      */
     public EditText getEditText() {
         return mEditText;
@@ -186,7 +189,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 获取当前的TextView资源
      *
-     * @return
+     * @return 返回Label
      */
     public TextView getLabel() {
         return mLabel;
@@ -196,7 +199,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 定义Label的字体，传入id资源
      *
-     * @param resid
+     * @param resid 资源id
      */
     public void setLabel(int resid) {
         setLabel(getContext().getString(resid));
@@ -205,7 +208,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 定义Label的字体，传入CharSequence资源
      *
-     * @param hint
+     * @param hint CharSequence的字符队列
      */
     public void setLabel(CharSequence hint) {
         mEditText.setHint(hint);
@@ -216,7 +219,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定Label的动画，如果为null就是默认的动画
      *
-     * @param labelAnimator
+     * @param labelAnimator 设定的动画
      */
     public void setLabelAnimator(LabelAnimator labelAnimator) {
         if (labelAnimator == null) {
@@ -230,7 +233,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定EditText的字体，传入id资源
      *
-     * @param
+     * @param resid 资源id
      */
     public void setText(int resid) {
         mEditText.setText(resid);
@@ -239,9 +242,9 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定EditText的字体，传入char数组资源
      *
-     * @param text
-     * @param start
-     * @param len
+     * @param text  char数组文本
+     * @param start 起始位置
+     * @param len   长度
      */
     public void setText(char[] text, int start, int len) {
         mEditText.setText(text, start, len);
@@ -250,8 +253,8 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定EditText的字体，传入id资源
      *
-     * @param resid
-     * @param type
+     * @param resid 资源di
+     * @param type  type类型
      */
     public void setText(int resid, TextView.BufferType type) {
         mEditText.setText(resid, type);
@@ -269,8 +272,8 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定EditText的字体，传入CharSequence资源
      *
-     * @param text
-     * @param type
+     * @param text CharSequence字符队列
+     * @param type type类型
      */
     public void setText(CharSequence text, TextView.BufferType type) {
         mEditText.setText(text, type);
@@ -280,7 +283,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定EditText并且Label没有动画，传入资源id
      *
-     * @param resid
+     * @param resid 资源id
      */
     public void setTextWithoutAnimation(int resid) {
         mSkipAnimation = true;
@@ -290,9 +293,9 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定EditText并且Label没有动画，传入char数组
      *
-     * @param text
-     * @param start
-     * @param len
+     * @param text  char数组
+     * @param start 起始位置
+     * @param len   长度
      */
     public void setTextWithoutAnimation(char[] text, int start, int len) {
         mSkipAnimation = true;
@@ -303,8 +306,8 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定EditText并且Label没有动画，传入资源id
      *
-     * @param resid
-     * @param type
+     * @param resid 资源id
+     * @param type  type类型
      */
     public void setTextWithoutAnimation(int resid, TextView.BufferType type) {
         mSkipAnimation = true;
@@ -314,7 +317,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定EditText并且Label没有动画，传入资源CharSequence
      *
-     * @param text
+     * @param text CharSequence字符队列
      */
     public void setTextWithoutAnimation(CharSequence text) {
         mSkipAnimation = true;
@@ -324,8 +327,8 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 设定EditText并且Label没有动画，传入资源CharSequence
      *
-     * @param text
-     * @param type
+     * @param text 文本
+     * @param type type类型
      */
     public void setTextWithoutAnimation(CharSequence text, TextView.BufferType type) {
         mSkipAnimation = true;
@@ -336,11 +339,11 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 布局子视图
      *
-     * @param changed
-     * @param left
-     * @param top
-     * @param right
-     * @param bottom
+     * @param changed 是否在改变
+     * @param left    左边距离
+     * @param top     顶部距离
+     * @param right   右边距离
+     * @param bottom  底部距离
      */
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
@@ -359,11 +362,11 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 对子视图进行布局
      *
-     * @param child
-     * @param parentLeft
-     * @param parentTop
-     * @param parentRight
-     * @param parentBottom
+     * @param child        子视图
+     * @param parentLeft   左边距离
+     * @param parentTop    顶部距离
+     * @param parentRight  右边距离
+     * @param parentBottom 底部距离
      */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void layoutChild(View child, int parentLeft, int parentTop, int parentRight, int parentBottom, int type) {
@@ -423,8 +426,8 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 视图测量大小并设置
      *
-     * @param widthMeasureSpec
-     * @param heightMeasureSpec
+     * @param widthMeasureSpec  宽MeasureSpec
+     * @param heightMeasureSpec 高MeasureSpec
      */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -449,8 +452,8 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 测量子视图的高度
      *
-     * @param heightMeasureSpec
-     * @return
+     * @param heightMeasureSpec 高MeasureSpec
+     * @return 测量的高度
      */
     private int measureHeight(int heightMeasureSpec) {
 
@@ -475,8 +478,8 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 测量子视图的高度
      *
-     * @param widthMeasureSpec
-     * @return
+     * @param widthMeasureSpec 宽MeasureSpec
+     * @return 返回测量的宽度
      */
     private int measureWidth(int widthMeasureSpec) {
 
@@ -502,7 +505,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 恢复保存的状态
      *
-     * @param state
+     * @param state 保存的state
      */
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
@@ -521,7 +524,7 @@ public class FloatLabelView extends FrameLayout {
     /**
      * 保存状态
      *
-     * @return
+     * @return 保存的state
      */
     @Override
     protected Parcelable onSaveInstanceState() {

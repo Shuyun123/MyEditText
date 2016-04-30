@@ -1,22 +1,18 @@
-#MyEditText
+#CustomEditText
 
 自定义的EditText组件
 
-支持自定义下滑线，下滑线可更改颜色、高度，带FloatLabel的浮动显示，与开发者头条app注册填写一样的效果，支持自定义EditText带删除图标和标识图标。
+支持自定义下滑线，下滑线可更改颜色、高度，带FloatLabel的浮动显示，与开发者头条app注册填写一样的效果，支持自定义EditText带删除图标和标识图标。支持浮动动画自定义和视图自定义。
 
-FloatLablel的功能来自 [IanGClifton](https://github.com/IanGClifton/AndroidFloatLabel")，需要添加依赖库
+包含两个文件:
+	MyEditText:自定义的EditText
+	FloatLabelView:带浮动的EdiText
 
-
-##依赖库
-
- ```bash
-compile 'com.iangclifton.android:floatlabel:1.0.4'
-```
-
-##示例
-![MyEditText](MyEditText.gif)
+##示
+![CustomEditText](CustomEditText.gif)
 
 ##MyEditText的使用
+默认是不会显示右边的删除图标。如果要显示，指定属性displayDelete="true"即可。同时也可自定义图标android:drawableRight即可。支持点击时下划线颜色、高度、没有焦点时下划线颜色的指定。
 在xml布局文件里添加如下布局文件:<br/>
 
 
@@ -37,7 +33,7 @@ compile 'com.iangclifton.android:floatlabel:1.0.4'
         anumbrella:unselectedColor="#000000" />
 ```
 
-属性列表<br/>
+属性列表(MyEditText)<br/>
 
 
  ```bash
@@ -61,52 +57,100 @@ compile 'com.iangclifton.android:floatlabel:1.0.4'
 <br/>
 平时在EditText里可以定义的属性一样可以使用
 
-而AndroidFloatLabel可以使用自己定义的EditText,也可以使用默认的，直接在xml中定义:
+
+##FloatLabelView的使用
+代码参考自[IanGClifton](https://github.com/IanGClifton/AndroidFloatLabel),添加了部分功能并进行了修改。
+默认是EditText和TextView结合的视图显示。可以自定义浮动字体的颜色，大小，与EdiText的上下距离，与屏幕左边的距离。同时也可以支持自定义的TextView和EditText显示。把id设置为具体的@+id/float_label和@+id/edit_text。
+
+在xml布局文件里添加如下布局文件:<br/>
+
 
 <br/>
  ```bash
-    <com.iangclifton.android.floatlabel.FloatLabel
-        android:id="@+id/float_label_4"
+    <net.anumbrella.customedittext.FloatLabelView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dip"
-        android:hint="自定义floatlabel的颜色"
+        android:hint="anumbrella"
         android:textColorHint="@drawable/custom_hint_color"
-        floatlabel:floatLabelColor="#FF0000" />
+        anumbrella:floatLabelColor="#FF0000"
+        anumbrella:bottomDistance="15dip"
+        anumbrella:leftDistance="50dip" />
 ```
 
+属性列表(FloatLabelView)<br/>
 
+ ```bash
+        <!--默认提示字体-->
+        <attr name="android:hint" />
+        <!--输入类型-->
+        <attr name="android:inputType" />
+        <!--布局视图资源-->
+        <attr name="android:layout" />
+        <!--各个方向获取焦点-->
+        <attr name="android:nextFocusDown" />
+        <attr name="android:nextFocusForward" />
+        <attr name="android:nextFocusLeft" />
+        <attr name="android:nextFocusRight" />
+        <attr name="android:nextFocusUp" />
+        <!--手机输入法软键盘回车的功能设置-->
+        <attr name="android:imeOptions" />
+        <!--EditText的文本-->
+        <attr name="android:text" />
+        <!--EditText提示字体的颜色-->
+        <attr name="android:textColorHint" />
+        <!--浮动字体的颜色-->
+        <attr name="floatLabelColor" format="color" />
+        <!--自定义TextView的id-->
+        <attr name="labelId" format="reference" />
+        <!--自定义EditText的id-->
+        <attr name="editTextId" format="reference" />
+        <!--FloatLabel显示的方式-->
+        <attr name="floatLabelDisplay" format="dimension" />
+        <!--FloatLable与左边的margin距离-->
+        <attr name="leftDistance" format="dimension" />
+        <!--FloatLable与EditText距离-->
+        <attr name="bottomDistance" format="dimension" />
+        <!--FloatLable字体的大小-->
+        <attr name="labelTextSize" format="dimension" />
+        <!--EidtText字体的大小-->
+        <attr name="editTextSize" format="dimension" />
+```
 <br/>
-使用自定义的EditText,如使用MyEditText,新建立布局文件如下:
 
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:anumbrella="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/float_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#FF1306DD"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+同时也可以使用你自己的自定义视图:
+<TextView
+    android:id="@+id/float_label"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textColor="#FF1306DD"
+    android:textStyle="bold"
+    android:typeface="monospace" />
 
-    <net.anumbrella.customedittext.MyEditText
-        android:id="@+id/edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:paddingLeft="2dip"
-        android:gravity="center_vertical"
-        anumbrella:displayDelete="false"
-        android:background="@drawable/bg_edittext"
-        android:drawableRight="@mipmap/ic_edittext_delete"
-        android:singleLine="true" />
+<net.anumbrella.customedittext.MyEditText
+    android:id="@+id/edit_text"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:paddingLeft="2dip"
+    android:gravity="center_vertical"
+    anumbrella:displayDelete="false"
+    android:background="@drawable/bg_edittext"
+    android:drawableRight="@mipmap/ic_edittext_delete"
+    android:singleLine="true" />
+注意id必须为@+id/float_label和@+id/edit_text。 
 
-</merge>
+具体的用法请看Demo。
 
-注意id必须为@+id/float_label和@+id/edit_text。
-<br/>
-具体的用法请看Demo
+##使用方法
+
+在gradle中添加依赖库
+
+ ```bash
+compile 'net.anumbrella.customedittext:1.0.0'
+```
+
 
 ##License:
 
