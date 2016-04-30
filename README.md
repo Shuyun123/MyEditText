@@ -8,11 +8,12 @@
 	MyEditText:自定义的EditText
 	FloatLabelView:带浮动的EdiText
 
-##示
+##示例
 ![CustomEditText](CustomEditText.gif)
 
 ##MyEditText的使用
 默认是不会显示右边的删除图标。如果要显示，指定属性displayDelete="true"即可。同时也可自定义图标android:drawableRight即可。支持点击时下划线颜色、高度、没有焦点时下划线颜色的指定。
+
 在xml布局文件里添加如下布局文件:<br/>
 
 
@@ -64,8 +65,6 @@
 
 在xml布局文件里添加如下布局文件:<br/>
 
-
-<br/>
  ```bash
     <net.anumbrella.customedittext.FloatLabelView
         android:layout_width="match_parent"
