@@ -147,7 +147,7 @@
 在gradle中添加依赖库
 
  ```bash
-compile 'net.anumbrella.customedittext:1.0.0'
+compile 'net.anumbrella:customedittext:1.0.0'
 ```
 
 
