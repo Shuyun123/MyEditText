@@ -59,7 +59,7 @@
 平时在EditText里可以定义的属性一样可以使用
 
 
-##FloatLabelView的使用
+## FloatLabelView的使用
 代码参考自[IanGClifton](https://github.com/IanGClifton/AndroidFloatLabel),添加了部分功能并进行了修改。
 默认是EditText和TextView结合的视图显示。可以自定义浮动字体的颜色，大小，与EdiText的上下距离，与屏幕左边的距离。同时也可以支持自定义的TextView和EditText显示。把id设置为具体的@+id/float_label和@+id/edit_text。
 
