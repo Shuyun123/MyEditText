@@ -121,7 +121,7 @@
 
 
 同时也可以使用你自己的自定义视图:
-
+```
 <TextView
     android:id="@+id/float_label"
     android:layout_width="match_parent"
@@ -141,14 +141,14 @@
     android:background="@drawable/bg_edittext"
     android:drawableRight="@mipmap/ic_edittext_delete"
     android:singleLine="true" />
-    
+  ```  
 注意id必须为@+id/float_label和@+id/edit_text。 
 
 具体的用法请看Demo。
 
 ## 使用方法
 
-在gradle中添加依赖库
+### 依赖
 
  ```bash
 compile 'net.anumbrella:customedittext:1.0.0'
