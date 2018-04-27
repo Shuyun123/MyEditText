@@ -1,4 +1,4 @@
-#CustomEditText
+# CustomEditText
 
 自定义的EditText组件
 
@@ -8,13 +8,14 @@
 	MyEditText:自定义的EditText
 	FloatLabelView:带浮动的EdiText
 
-##示例
+## 示例
 ![CustomEditText](CustomEditText.gif)
 
-##MyEditText的使用
+## MyEditText的使用
 默认是不会显示右边的删除图标。如果要显示，指定属性displayDelete="true"即可。同时也可自定义图标android:drawableRight即可。支持点击时下划线颜色、高度、没有焦点时下划线颜色的指定。
 
-在xml布局文件里添加如下布局文件:<br/>
+在xml布局文件里添加如下布局文件:
+<br/>
 
 
  ```bash
@@ -34,7 +35,7 @@
         anumbrella:unselectedColor="#000000" />
 ```
 
-属性列表(MyEditText)<br/>
+属性列表(MyEditText)
 
 
  ```bash
@@ -55,7 +56,6 @@
 ```
 
 
-<br/>
 平时在EditText里可以定义的属性一样可以使用
 
 
@@ -63,7 +63,8 @@
 代码参考自[IanGClifton](https://github.com/IanGClifton/AndroidFloatLabel),添加了部分功能并进行了修改。
 默认是EditText和TextView结合的视图显示。可以自定义浮动字体的颜色，大小，与EdiText的上下距离，与屏幕左边的距离。同时也可以支持自定义的TextView和EditText显示。把id设置为具体的@+id/float_label和@+id/edit_text。
 
-在xml布局文件里添加如下布局文件:<br/>
+在xml布局文件里添加如下布局文件:
+
 
  ```bash
     <net.anumbrella.customedittext.FloatLabelView
@@ -77,7 +78,8 @@
         anumbrella:leftDistance="50dip" />
 ```
 
-属性列表(FloatLabelView)<br/>
+属性列表(FloatLabelView)
+
 
  ```bash
         <!--默认提示字体-->
@@ -119,6 +121,7 @@
 
 
 同时也可以使用你自己的自定义视图:
+
 <TextView
     android:id="@+id/float_label"
     android:layout_width="match_parent"
@@ -138,11 +141,12 @@
     android:background="@drawable/bg_edittext"
     android:drawableRight="@mipmap/ic_edittext_delete"
     android:singleLine="true" />
+    
 注意id必须为@+id/float_label和@+id/edit_text。 
 
 具体的用法请看Demo。
 
-##使用方法
+## 使用方法
 
 在gradle中添加依赖库
 
@@ -151,14 +155,18 @@ compile 'net.anumbrella:customedittext:1.0.0'
 ```
 
 
-##License:
+## License
 
-```bash
-               Copyright 2015 Anumbrella
+The Apache Software License, Version 2.0
+
+Copyright  [2015]  [Anumbrella]
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
-You may obtain a copy of the License at 
-        http://www.apache.org/licenses/LICENSE-2.0
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
